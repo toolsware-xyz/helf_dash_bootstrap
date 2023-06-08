@@ -1,0 +1,60 @@
+
+//Ticket Chart
+.ap-po-details {
+    filter: drop-shadow(0px 3px 6px transparent);
+    padding:39px 25px;
+    border-radius: 10px;
+    transition: 0.3s;
+    position: relative;
+    &:hover{
+        filter: drop-shadow(0px 3px 6px rgba(#000000, 0.16));
+    }
+
+    @include e(icon-area) {
+        .svg-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
+            @extend .content-center;
+            @include ssm{
+                width: 45px;
+                height: 45px;
+            }
+
+            i {
+                @include rfs(30px);
+            }
+        }
+    }
+
+    .overview-content {
+        p {
+            margin: 6px 0 0;
+            color: var(--color-gray);
+            @include ofs(16px, lh(16px, 25px), 400);
+            text-transform: capitalize;
+        }
+    }
+}
+
+.ap-po-details--ticket{
+    padding: 44px 25px 44px 25px;
+    box-shadow: 0 10px 30px rgba(var(--color-lighten-rgb), 0.2);
+    filter:none;
+    @include xs{
+      padding: 25px;
+    }
+    .overview-content {
+      p{
+        margin-bottom: 0;
+      }
+      .ap-po-details-content{
+        align-items: center;
+      }
+    }
+    .ap-po-details__icon-area {
+      .svg-icon{
+        border-radius: 14px;
+      }
+    }
+}

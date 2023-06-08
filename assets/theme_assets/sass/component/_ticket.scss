@@ -1,0 +1,105 @@
+.ticket-status{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-white);
+    box-shadow:0 10px 30px rgba(var(--color-lighten-rgb), 0.2);
+    border-radius: 10px;
+    padding: 25px 70px;
+    position: relative;
+    @include md{
+        padding: 25px 40px;
+    }
+    @include sm{
+        flex-wrap: wrap;
+        gap: 25px;
+        padding: 25px 30px;
+    }
+    @include e(item){
+        display: flex;
+        align-items: center;
+        position: relative;
+        flex: 1;
+        justify-content: space-between;
+        @include md{
+            flex-direction: column;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap:15px;
+        }
+        @include sm{
+            flex: 30%;
+        }
+        @include xs{
+            flex: 100%;
+            &:not(:last-child){
+                border-bottom: 1px solid var(--border-color);
+                padding-bottom: 25px;
+            }
+        }
+        &:not(:first-child){
+            margin-left: 133px;
+            @include xxl{
+                margin-left: 60px;
+            }
+            @include md{
+                margin-left: 30px;
+            }
+            @include sm{
+                margin: 0;
+            }
+        }
+        &:not(:last-child){
+            margin-right: 133px;
+            @include xxl{
+                margin-right: 60px;
+            }
+            @include md{
+                margin-right: 30px;
+            }
+            @include sm{
+                margin: 0;
+            }
+            &:after{
+                content: '';
+                position: absolute;
+                background-color: var(--border-color);
+                width: 1px;
+                height: 75px;
+                top: 50%;
+                right: -50%;
+                transform: translate(-50%, -50%);
+                @include xxl{
+                    right: -25%;
+                }
+                @include md{
+                    display: none;
+                }
+            }
+        }
+        .ticket-status-content{
+            @include md{
+                text-align: center;
+            }
+            p{
+                margin-bottom: 0;
+                margin-top: 9px;
+                font-size: 16px;
+                line-height: lh(16px, 27px);
+                color: var(--color-gray)
+            }
+        }
+
+        i{
+            @include rfs(70px);
+        }
+        img,svg{
+            max-width: 70px;
+            max-height: 70px;
+            @include md{
+                max-width: 50px;
+                max-height: 50px;
+            }
+        }
+    }
+}
